@@ -17,7 +17,7 @@ ute
     ```
     Al termine, vedrai un output simile a questo, che conferma il successo dell'operazione:
     
-    ![Installazione Ruolo AD DS](https://github.com/user-attachments/assets/bb432684-6745-49d8-9219-99c4419e6e77)
+    (https://github.com/user-attachments/assets/bb432684-6745-49d8-9219-99c4419e6e77)
 
  Ora lancia il comando per creare la nuova foresta. **Sostituisci i valori di esempio** con quelli desiderati.
 
@@ -49,7 +49,7 @@ ute
 
    -Selezionare Role-based or feature-based installation.
 
-  ![Wizard - Installation Type](https://github.com/user-attachments/assets/dc5d0a48-638b-4b39-9cc9-7559124dee46)
+ (https://github.com/user-attachments/assets/dc5d0a48-638b-4b39-9cc9-7559124dee46)
 
 
   
