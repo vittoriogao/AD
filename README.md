@@ -14,14 +14,18 @@ Questo metodo è il più veloce
    Lancia il seguente comando per installare i servizi di dominio e gli strumenti di gestione:
 
     Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
-    ```
-    Al termine, vedrai un output simile a questo, che conferma il successo dell'operazione:
-    
-    (https://github.com/user-attachments/assets/bb432684-6745-49d8-9219-99c4419e6e77)
+
+
+  Al termine, vedrai un output simile a questo, che conferma il successo dell'operazione:
+  
+  <img width="992" height="176" alt="immagine" src="https://github.com/user-attachments/assets/3d58f085-01c4-4566-a7f8-4b8a965ba332" />
+
+  (nel mio caso riporta NoChangeNeeded in quanto già presente ma se la colonna di Success è true allora ha avuto successo l'installazione)
+ 
 
  Ora lancia il comando per creare la nuova foresta. **Sostituisci i valori di esempio** con quelli desiderati.
 
-    ```powershell
+    
     Install-ADDSForest `
         -DomainName "esempio" `
         -DomainNetbiosName "qua potrai cambiarlo in un nome più breve" `
@@ -30,9 +34,8 @@ Questo metodo è il più veloce
         -DomainMode Win2025 `
         -SafeModeAdministratorPassword ( `
         -Force
-    ```
-
-> **Nota:** Dopo aver eseguito l'ultimo comando, il server verrà **riavviato** per completare la configurazione.
+   
+ **Nota:** Dopo aver eseguito l'ultimo comando, il server verrà **riavviato** per completare la configurazione.
 
 ---
 
@@ -42,50 +45,55 @@ Questo metodo è il più veloce
 - Se volessimo invece farlo da GUI:
    - tasto Start e cerchiamo Server Manager
   - Successivamente Aggiungi ruoli e funzionalità
-   (https://github.com/user-attachments/assets/360487e7-3453-460c-940d-d1ca2ae4cfe)
+  - 
+  <img width="1022" height="429" alt="immagine" src="https://github.com/user-attachments/assets/1a05b9b7-3ee8-4e15-a306-0346ffa75482" />
 
-- Premere avanti (Next)
-(https://github.com/user-attachments/assets/ae0eadd4-5ac1-42f9-8e78-b947421a66c5)
+- Premere avanti
 
-   -Selezionare Role-based or feature-based installation.
+<img width="773" height="546" alt="immagine" src="https://github.com/user-attachments/assets/301058c5-59da-484d-a0d4-7ac0aa5df5c4" />
 
- (https://github.com/user-attachments/assets/dc5d0a48-638b-4b39-9cc9-7559124dee46)
+<img width="787" height="555" alt="immagine" src="https://github.com/user-attachments/assets/2e97af59-b0ca-4f29-818a-8c92d6cab055" />
 
+-  qua si seleziona il server
+  
+<img width="771" height="548" alt="immagine" src="https://github.com/user-attachments/assets/9b8e2537-f740-4268-96ec-ab84edeb8b5c" />
+
+- Cercare
+   <img width="771" height="552" alt="immagine" src="https://github.com/user-attachments/assets/dfe05e25-1876-43f5-ada3-268b2a22d423" />
 
   
-SE È ANDATO TUTTO CORRETTAMENTE DOVREMMO VEDERLO COSÌ:
-<img width="661" height="519" alt="immagine" src="https://github.com/user-attachments/assets/a13f39b8-1dce-4229-bbfa-5bd53ea1bec1" />
+SE È ANDATO TUTTO CORRETTAMENTE DOVREMMO VEDERLO COSÌ NELLA HOME PAGE DI SERVER MANAGER:
+<img width="661" height="519" alt="immagine" src="https://github.com/user-attachments/assets/fa1c250d-c849-4859-9e2d-d4eed4c3c908" />
 
 
 Per creare un nuovo utente da GUI cerchiamo: 
 
-  <img width="356" height="102" alt="immagine" src="https://github.com/user-attachments/assets/51ad40f2-dc37-4654-a832-7fb4ffd6b997" />
+<img width="356" height="102" alt="immagine" src="https://github.com/user-attachments/assets/29844ec2-df50-4448-bb8b-bbe1da7b3298" />
 
 Click destro e selezioniamo Nuovo> Utente 
-
-- <img width="519" height="447" alt="immagine" src="https://github.com/user-attachments/assets/bab81d00-e48d-4333-a12c-8b204a2f1ac7" />
-
 Si apre una schermata del genere:
 
- - <img width="425" height="364" alt="immagine" src="https://github.com/user-attachments/assets/7c596bc6-3c64-4cfb-bf56-484cc683db3d" />
-
+ - <img width="519" height="447" alt="immagine" src="https://github.com/user-attachments/assets/e7b62e81-cac6-4e4d-83f0-69eea7cdb815" />
 
 Impostata una password che **NB** deve contenere caratteri alfanumerici e simboli per esser accettata.
 Nel mio caso ho deciso di selezionare di non cambiare la password e non richiedere un cambiamento obbligatorio all'accesso successivo ma come best practice sarebbe meglio abilitare la spunta e lasciare la scadenza
 
-- <img width="432" height="365" alt="immagine" src="https://github.com/user-attachments/assets/9459394f-2c63-4af2-a4f3-7033467438c4" />
+<img width="426" height="369" alt="immagine" src="https://github.com/user-attachments/assets/ccfc5e0c-65ce-4316-8cb1-d0819f373688" />
+
+<img width="432" height="365" alt="immagine" src="https://github.com/user-attachments/assets/a7f02870-102d-4005-9be0-96ad57bbf843" />
+
 
 Premendo fine avremo il nostro utente: 
-- <img width="757" height="527" alt="immagine" src="https://github.com/user-attachments/assets/88838014-46f8-48c4-bfeb-6be9a9a91f39" />
+- <img width="757" height="527" alt="immagine" src="https://github.com/user-attachments/assets/26a1d865-f518-4007-a110-7ec884f5681a" />
 
 Questa operazione si può eseguire anche su Powershell tramite il comando: New-ADUser compilando poi i vari dati necessari
 
 New-ADUser -Name "Mario Rossi" -GivenName "Mario" -Surname "Rossi" -SamAccountName "m.rossi" -UserPrincipalName "m.rossi@prova.ad" -AccountPassword (ConvertTo-SecureString "Password123!" -AsPlainText -Force) `
 -Enabled $true
 
-<img width="1012" height="102" alt="immagine" src="https://github.com/user-attachments/assets/f5aa6103-b82b-4927-80c4-f12c75799c68" />
+<img width="1012" height="102" alt="immagine" src="https://github.com/user-attachments/assets/6c28548d-6e42-4997-975c-93dc03ad505a" />
 
 Come verifica possiam sempre andare a controllare nella cartella Utenti:
 
-<img width="740" height="515" alt="immagine" src="https://github.com/user-attachments/assets/67570a62-2046-437f-a6fa-e32a2d2c7be8" />
+<img width="740" height="515" alt="immagine" src="https://github.com/user-attachments/assets/0599d36d-fa43-43e5-8abc-ff3041b92482" />
 
