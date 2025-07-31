@@ -6,8 +6,8 @@ Il mio approccio scelto è stato tramite **PowerShell**, uno strumento più pote
 
 ## Metodo 1: Installazione tramite PowerShell (Consigliato)
 
-Questo metodo è il più veloce .
-ute
+Questo metodo è il più veloce
+
 ### Passaggio 1: Installare il Ruolo Active Directory
 
   Collegati alla tua macchina Windows Server 2025. Apri una finestra di **PowerShell con privilegi di amministratore**.
